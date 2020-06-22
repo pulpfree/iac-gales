@@ -6,7 +6,7 @@ stage = "staging"
 
 name = "fe"
 
-aliases = ["gdps-stage.pfsites.com"]
+aliases = ["gdips-stage.pfsites.com"]
 
 parent_zone_id = "Z10I0T16D0PGUY"
 
