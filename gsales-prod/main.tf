@@ -1,6 +1,6 @@
 locals {
   acm_certificate_arn = "arn:aws:acm:us-east-1:407205661819:certificate/4b591055-6e6d-4728-aed9-2c55d31c0c0f"
-  aliases             = ["gsales-prod.pfsites.com"]
+  aliases             = ["gsales.pfsites.com"]
   name                = "fe"
   namespace           = "gsales"
   parent_zone_name    = "pfsites.com"
