@@ -2,7 +2,7 @@
 # I'm sure there's a better way to handle this, but for now we deal with it
 
 # use in stage environment
-/* locals {
+locals {
   bill_to     = "Gales"
   environment = "stage"
   owner       = "webbtech"
@@ -14,10 +14,10 @@ terraform {
     key    = "gsales-cloudfront.tfstate"
     region = "ca-central-1"
   }
-} */
+}
 
 # use in production environment
-locals {
+/* locals {
   bill_to     = "Gales"
   environment = "prod"
   owner       = "webbtech"
@@ -29,7 +29,7 @@ terraform {
     key    = "gsales-cloudfront.tfstate"
     region = "ca-central-1"
   }
-}
+} */
 
 provider "aws" {
   profile = "default"
@@ -63,7 +63,7 @@ module "cloudfront_s3_cdn" {
   use_regional_s3_endpoint  = true
 }
 
-# Uncomment after first creating
+# Comment out after first creating
 /* resource "aws_s3_bucket_object" "index" {
   bucket       = module.cloudfront_s3_cdn.s3_bucket
   key          = "index.html"
