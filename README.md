@@ -1,15 +1,5 @@
-# Webbtech Terraform Cloud Infrastructure
+# Terraform Cloudfront Infrastructure For Gales Sites
 
-## Plan & Deploy Commands
+## Deployment Notes
 
-```bash
-# stage environment
-terraform plan -var-file=stage.tfvars
-terraform apply -var-file=stage.tfvars
-
-# production environment
-terraform plan -var-file=prod.tfvars
-terraform apply -var-file=prod.tfvars
-```
-
-When deploying gsales-client, ensure that the 'locals'  object is switched between environments, i.e.: stage and prod
+**Important**: When redeploying any of these, it's important to re-deploy the front-end sites to re-populate the buckets

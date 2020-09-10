@@ -1,9 +1,6 @@
-variable "acm_certificate_arn" {
-  type = string
-}
-
-variable "aliases" {
-  type = list(string)
+variable "attributes" {
+  default = []
+  type    = list(string)
 }
 
 variable "geo_restriction_locations" {
@@ -14,26 +11,6 @@ variable "geo_restriction_locations" {
 variable "geo_restriction_type" {
   type = string
   default = "whitelist"
-}
-
-variable "name" {
-  type = string
-}
-
-variable "namespace" {
-  type = string
-}
-
-variable "parent_zone_id" {
-  type = string
-}
-
-variable "region" {
-  type = string
-}
-
-variable "stage" {
-  type = string
 }
 
 variable "custom_error_response" {
