@@ -3,7 +3,7 @@
 # I'm sure there's a better way to handle this, (different directories as modules for each stage) but for now we deal with it this way
 
 # use in stage environment
-locals {
+/* locals {
   bill_to     = "Gales"
   environment = "stage"
   owner       = "webbtech"
@@ -15,10 +15,10 @@ terraform {
     key    = "gdps-cloudfront.tfstate"
     region = "ca-central-1"
   }
-}
+} */
 
 # use in production environment
-/* locals {
+locals {
   bill_to     = "Gales"
   environment = "prod"
   owner       = "webbtech"
@@ -30,7 +30,7 @@ terraform {
     key    = "gdps-cloudfront.tfstate"
     region = "ca-central-1"
   }
-} */
+}
 
 provider "aws" {
   profile = "default"
@@ -40,7 +40,7 @@ provider "aws" {
 module "cloudfront_s3_cdn" {
   source                    = "../modules/cloudfront"
   acm_certificate_arn       = var.acm_certificate_arn
-  aliases                   = var.aliases
+  # aliases                   = var.aliases
   compress                  = true
   cors_allowed_headers      = ["*"]
   # cors_allowed_headers      = ["content-type"]
